@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 1,
+  "title": "RTB House TAM Interview Practice",
+  "language": "en-GB",
+  "checkedAt": "2026-11-23",
+  "sources": {
+    "job": "https://job-boards.eu.greenhouse.io/rtbhouse/jobs/5019480101",
+    "about": "https://www.rtbhouse.com/about-us",
+    "tickpick": "https://www.rtbhouse.com/case-studies/tickpick-drives-20percent-incremental-revenue-in-app",
+    "iab-dsp": "https://data.iab.com/ecosystem.html",
+    "iab-rtb": "https://www.iab.com/guidelines/openrtb/",
+    "ga-sessions": "https://support.google.com/analytics/answer/14452452?hl=en",
+    "ga-purchase": "https://developers.google.com/analytics/devguides/collection/ga4/set-up-ecommerce",
+    "gtm-data-layer": "https://developers.google.com/tag-platform/tag-manager/datalayer",
+    "chrome-cookies": "https://developer.chrome.com/docs/devtools/application/cookies",
+    "mdn-js": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types",
+    "mdn-equality": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
+    "mdn-addition": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition",
+    "mdn-functions": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions",
+    "mdn-events": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+    "appsFlyer-mmp": "https://support.appsflyer.com/hc/en-us/articles/360000732237-AppsFlyer-Knowledge-Base-glossary",
+    "mdn-data-structures": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures",
+    "mdn-language-overview": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview",
+    "product-feed": "https://support.google.com/google-ads/answer/17261094?hl=en-UM"
+  },
+  "questions": [
+    {
+      "id": "company-dsp-01",
+      "category": "adtech",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 30,
+      "prompt": "What does DSP stand for, and what does it do?",
+      "answer": "Demand-Side Platform: software advertisers use to buy digital ad opportunities automatically, often through auctions. It can evaluate the opportunity, audience, creative and bid against the advertiser's goal and budget.",
+      "checklist": [
+        "Expands the acronym",
+        "Explains it is on the advertiser/buyer side",
+        "Mentions automated ad buying or bidding"
+      ],
+      "misconception": "A DSP is not the publisher's selling platform; that is generally an SSP.",
+      "sourceIds": [
+        "iab-dsp"
+      ]
+    },
+    {
+      "id": "company-rtb-01",
+      "category": "adtech",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 30,
+      "prompt": "What is real-time bidding (RTB)?",
+      "answer": "An automated auction for an individual digital ad impression. The auction usually happens in a fraction of a second when a publisher makes ad space available.",
+      "checklist": [
+        "Individual ad impression/opportunity",
+        "Automated auction",
+        "Happens in real time"
+      ],
+      "sourceIds": [
+        "iab-rtb"
+      ]
+    },
+    {
+      "id": "company-ecosystem-01",
+      "category": "adtech",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 20,
+      "prompt": "Which platform mainly helps advertisers buy ad inventory?",
+      "options": [
+        "DSP",
+        "SSP",
+        "Publisher ad server",
+        "CMP"
+      ],
+      "correctIndex": 0,
+      "answer": "A DSP is on the advertiser/demand side. An SSP helps a publisher sell its available inventory.",
+      "sourceIds": [
+        "iab-dsp"
+      ]
+    },
+    {
+      "id": "retargeting-01",
+      "category": "campaigns",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "Explain retargeting in one sentence and give a simple example.",
+      "answer": "Retargeting shows relevant ads to people who already interacted with a business. For example, someone views trainers in a shop and later sees an ad for those trainers.",
+      "checklist": [
+        "Prior interaction",
+        "Relevant later ad",
+        "Clear example"
+      ],
+      "misconception": "A retargeted person can still be a first-time buyer; prior interaction does not mean prior purchase.",
+      "sourceIds": [
+        "about"
+      ]
+    },
+    {
+      "id": "branding-01",
+      "category": "campaigns",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "What is a branding campaign, and how might success be measured?",
+      "answer": "A campaign aimed at awareness, recognition, preference or engagement. Depending on the goal, useful measures could include relevant reach, viewability, video completion or brand lift.",
+      "checklist": [
+        "Awareness/preference/engagement objective",
+        "Metric matches stated objective",
+        "Does not assume only immediate purchases matter"
+      ]
+    },
+    {
+      "id": "funnel-01",
+      "category": "campaigns",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 20,
+      "prompt": "Choose a useful simplified purchase funnel.",
+      "options": [
+        "Awareness → consideration → purchase → retention",
+        "Purchase → awareness → retention → consideration",
+        "Clicks → cookies → tags → impressions",
+        "Reach → CPM → CPC → CPA"
+      ],
+      "correctIndex": 0,
+      "answer": "Awareness → consideration → purchase → retention is a useful simplified model. Real customer journeys can skip, repeat or cross stages."
+    },
+    {
+      "id": "click-session-01",
+      "category": "measurement",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 40,
+      "prompt": "Why might an ad platform report more clicks than GA4 reports sessions?",
+      "answer": "Clicks and sessions are different metrics. Multiple clicks may fall within one session; someone may leave before analytics loads; tracking, redirects, consent, tagging, attribution scope, processing or filtering may differ. First align definitions, dates and campaign scope, then investigate the journey.",
+      "checklist": [
+        "States clicks and sessions differ",
+        "Gives at least two plausible causes",
+        "Suggests align definitions/scope then test",
+        "Avoids assuming fraud or blaming one system"
+      ],
+      "sourceIds": [
+        "ga-sessions"
+      ]
+    },
+    {
+      "id": "tracking-tag-01",
+      "category": "tracking",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 20,
+      "prompt": "In a simple GTM explanation, what is the difference between tag, trigger and variable?",
+      "options": [
+        "What runs; when it runs; the value/data it uses",
+        "When it runs; what runs; the destination",
+        "Data value; cookie; page",
+        "All three mean the same thing"
+      ],
+      "correctIndex": 0,
+      "answer": "A tag performs an action, a trigger determines when it runs, and a variable provides a value used by the configuration.",
+      "sourceIds": [
+        "gtm-data-layer"
+      ]
+    },
+    {
+      "id": "data-layer-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 35,
+      "prompt": "What is the dataLayer, and why does a dataLayer push not by itself prove an event was tracked?",
+      "answer": "It is a structured JavaScript data object used to make event details available to tag configurations. A push alone does not show that a trigger matched, a tag fired, the request was sent, or the receiving system processed it.",
+      "checklist": [
+        "Structured events/data for tags",
+        "A push only enters data into the layer",
+        "Mentions downstream firing/transmission/receipt validation"
+      ],
+      "sourceIds": [
+        "gtm-data-layer"
+      ]
+    },
+    {
+      "id": "cookie-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "In Chrome, where can you inspect a site's cookies?",
+      "answer": "Open DevTools → Application → Storage → Cookies, then select the relevant origin. Use Network as well if checking whether a cookie was sent with a request. HttpOnly cookies are not accessible through document.cookie.",
+      "checklist": [
+        "DevTools",
+        "Application/Storage/Cookies",
+        "Select origin",
+        "Network useful for sent request"
+      ],
+      "sourceIds": [
+        "chrome-cookies"
+      ]
+    },
+    {
+      "id": "purchase-event-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 35,
+      "prompt": "What would you check on an ecommerce purchase event?",
+      "answer": "It should represent a confirmed purchase. Check event timing, unique transaction ID, numeric value, currency, item/product IDs, duplicate firing, failed payments, page reload behaviour and whether it reaches the expected destination.",
+      "checklist": [
+        "Confirmed outcome rather than button click",
+        "Transaction ID",
+        "Value/currency/items",
+        "Duplicates/reload/failure paths",
+        "Validate receipt"
+      ],
+      "sourceIds": [
+        "ga-purchase"
+      ]
+    },
+    {
+      "id": "js-equality-01",
+      "category": "javascript",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 20,
+      "prompt": "What is the difference between == and === in JavaScript?",
+      "options": [
+        "== permits type coercion; === compares without type coercion",
+        "=== assigns; == compares",
+        "They always behave identically",
+        "== compares types while === ignores types"
+      ],
+      "correctIndex": 0,
+      "answer": "== may convert values before comparison; === compares without type coercion. Strict equality is a clear default.",
+      "sourceIds": [
+        "mdn-equality"
+      ]
+    },
+    {
+      "id": "js-plus-01",
+      "category": "javascript",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 20,
+      "prompt": "What is the value and type of `var a = 3 + 2 + \"7\"`?",
+      "options": [
+        "String \"57\"",
+        "Number 57",
+        "Number 12",
+        "String \"327\""
+      ],
+      "correctIndex": 0,
+      "answer": "Addition runs left to right: 3 + 2 is numeric 5; then 5 + \"7\" joins into the string \"57\".",
+      "sourceIds": [
+        "mdn-addition"
+      ]
+    },
+    {
+      "id": "js-string-02",
+      "category": "javascript",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 30,
+      "prompt": "Why might adding a price from an HTML field produce an unexpected result?",
+      "answer": "Values read from fields are often strings. With `+`, JavaScript may concatenate text, such as `\"20\" + 5` producing `\"205\"`. Convert and validate numeric data before arithmetic.",
+      "checklist": [
+        "Input may be string",
+        "Plus can concatenate",
+        "Convert and validate"
+      ],
+      "sourceIds": [
+        "mdn-addition"
+      ]
+    },
+    {
+      "id": "metrics-ctr-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "What is CTR? Calculate it for 1,000 clicks and 100,000 impressions.",
+      "answer": "CTR = clicks ÷ impressions × 100. Here it is 1%.",
+      "checklist": [
+        "Clicks divided by impressions",
+        "Multiply by 100",
+        "Answer 1%"
+      ],
+      "calculation": {
+        "expression": "1000 / 100000 * 100",
+        "expected": 1,
+        "unit": "percent"
+      }
+    },
+    {
+      "id": "metrics-cpa-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "A campaign spends £600 and gets 30 purchases. What is CPA?",
+      "answer": "CPA = spend ÷ defined conversions = £600 ÷ 30 = £20 per purchase.",
+      "checklist": [
+        "Spend divided by conversions",
+        "£20",
+        "Names unit as per purchase"
+      ],
+      "calculation": {
+        "expression": "600 / 30",
+        "expected": 20,
+        "unit": "GBP per purchase"
+      }
+    },
+    {
+      "id": "metrics-roas-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 30,
+      "prompt": "Spend is £500 and attributed revenue is £3,200. What is ROAS, and does that prove profit?",
+      "answer": "ROAS = attributed revenue ÷ ad spend = 6.4x (640%). It does not by itself prove profit; margin, returns, discounts and other costs matter.",
+      "checklist": [
+        "6.4x or 640%",
+        "Attributed revenue divided by spend",
+        "ROAS is not profit"
+      ],
+      "calculation": {
+        "expression": "3200 / 500",
+        "expected": 6.4,
+        "unit": "x"
+      }
+    },
+    {
+      "id": "metrics-points-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 30,
+      "prompt": "Conversion rate moves from 2% to 3%. What is the percentage-point change and the relative increase?",
+      "answer": "+1 percentage point. Relative increase is (3-2) ÷ 2 = 50%.",
+      "checklist": [
+        "+1 percentage point",
+        "+50% relative change",
+        "Does not call the change 1%"
+      ],
+      "calculation": {
+        "expression": "(3-2) / 2 * 100",
+        "expected": 50,
+        "unit": "percent relative increase"
+      }
+    },
+    {
+      "id": "pricing-cps-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 45,
+      "prompt": "A client asks whether CPC or CPS is better. What is your first question?",
+      "answer": "Ask what CPS means (cost per sale or cost per session) and what outcome the client wants. Then compare expected unit cost, quality, volume, measurement and attribution under the same assumptions.",
+      "checklist": [
+        "Clarify CPS definition",
+        "Clarify objective",
+        "Compare on consistent definitions and evidence"
+      ],
+      "misconception": "A billing model is not automatically a better result or safer campaign."
+    },
+    {
+      "id": "retarget-incremental-01",
+      "category": "campaigns",
+      "type": "short",
+      "difficulty": 3,
+      "seconds": 40,
+      "prompt": "Why is attributed ROAS alone not proof that a retargeting campaign generated incremental sales?",
+      "answer": "Retargeting reaches people already likely to buy. Attribution allocates credit under chosen rules; it does not show what would have happened without the ad. A well-designed holdout/experiment can estimate incremental impact.",
+      "checklist": [
+        "High-intent users may buy anyway",
+        "Attribution is credit assignment",
+        "Incrementality asks counterfactual",
+        "Mentions holdout/experiment"
+      ],
+      "sourceIds": [
+        "tickpick"
+      ]
+    },
+    {
+      "id": "debug-framework-01",
+      "category": "cases",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 40,
+      "prompt": "Give a simple sequence for investigating a tracking or integration problem.",
+      "answer": "Reproduce it; define expected versus actual; inspect the event/request and data; compare a working journey; isolate the cause; fix or escalate with evidence; retest; update the client.",
+      "checklist": [
+        "Reproduce",
+        "Inspect evidence",
+        "Isolate cause",
+        "Retest",
+        "Communicate next step"
+      ]
+    },
+    {
+      "id": "case-click-session-01",
+      "category": "cases",
+      "type": "scenario",
+      "difficulty": 3,
+      "seconds": 90,
+      "prompt": "Practice case: an ad platform shows 10,000 clicks while GA4 shows 6,500 campaign sessions. What do you tell the client and check first?",
+      "answer": "Do not assume 3,500 people were lost. First align metric, date, timezone, campaign scope and attribution. Clicks and sessions differ. Then segment where the gap began and test landing-page load, redirects/parameters, tag firing, consent, blockers, and reporting delay. Report confirmed causes and remaining uncertainty.",
+      "checklist": [
+        "Clicks and sessions are different",
+        "Align scope/date/definitions",
+        "Segment and test journey/tracking",
+        "Avoid premature blame",
+        "Give next update"
+      ],
+      "label": "Fictional interview practice data",
+      "sourceIds": [
+        "ga-sessions"
+      ]
+    },
+    {
+      "id": "case-duplicate-purchase-01",
+      "category": "cases",
+      "type": "scenario",
+      "difficulty": 3,
+      "seconds": 90,
+      "prompt": "A purchase event fires twice for some orders after a site change. What do you investigate?",
+      "answer": "Reproduce one test order, compare timestamps and transaction IDs, inspect request initiators and recent changes, and determine whether there are duplicate tags/containers, event handlers or reloads. Compare against completed backend orders if authorised. Fix the identified cause and retest successful, failed and reload paths.",
+      "checklist": [
+        "Reproduce",
+        "Compare IDs/times",
+        "Inspect initiators/recent changes",
+        "Separate tracking duplication from actual orders",
+        "Retest edge cases"
+      ]
+    },
+    {
+      "id": "interview-why-rtb-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 45,
+      "prompt": "Why RTB House?",
+      "rubric": [
+        "Shows researched understanding of the DSP/performance business",
+        "Connects reliable integrations or measurement to the user's experience",
+        "Gives a personal reason for interest",
+        "Avoids unsupported praise or pretending to know internal culture"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/whyRtb"
+    },
+    {
+      "id": "interview-why-tam-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 40,
+      "prompt": "Why this Technical Account Manager role?",
+      "rubric": [
+        "Enjoys diagnosing client problems",
+        "Connects ecommerce implementation and communication experience",
+        "Names growth interest in tracking/performance",
+        "Acknowledges learning area honestly"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/whyTam"
+    },
+    {
+      "id": "interview-five-years-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 1,
+      "seconds": 40,
+      "prompt": "Where would you like to be in five years?",
+      "rubric": [
+        "Plausible technical/account growth",
+        "Connects to client impact",
+        "Shows learning and ownership",
+        "Does not overpromise seniority or management"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/fiveYears"
+    },
+    {
+      "id": "interview-leaving-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 55,
+      "prompt": "Why are you considering a move after five months?",
+      "rubric": [
+        "Explains fit calmly and truthfully",
+        "Acknowledges value gained in current role",
+        "Avoids attacking colleagues",
+        "Names what next role should provide",
+        "Shows care in choosing next role"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/leaving"
+    },
+    {
+      "id": "interview-client-story-01",
+      "category": "behavioural",
+      "type": "interview",
+      "difficulty": 3,
+      "seconds": 90,
+      "prompt": "Tell me about a complex problem you solved for a client.",
+      "rubric": [
+        "Situation and client need are clear",
+        "Separates own work from engineer's work",
+        "Explains both Shopify storage and API obstacles",
+        "Describes coordination/decision",
+        "States verified outcome without invented metrics",
+        "Adds a lesson or transfer"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/clientIntegrationDetailed"
+    },
+    {
+      "id": "interview-client-satisfied-01",
+      "category": "behavioural",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 75,
+      "prompt": "Describe a time a client was satisfied with your support.",
+      "rubric": [
+        "Uses a specific real client example",
+        "Explains what the client needed",
+        "Own actions are concrete",
+        "Reports observable outcome, not invented feedback",
+        "Can answer how they verified it"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/clientIntegrationBrief"
+    },
+    {
+      "id": "interview-initiative-01",
+      "category": "behavioural",
+      "type": "interview",
+      "difficulty": 3,
+      "seconds": 75,
+      "prompt": "Tell me about a time you took initiative beyond your assigned work.",
+      "rubric": [
+        "Names what was assigned vs noticed",
+        "Explains why it mattered",
+        "Shows proportionate action",
+        "States actual result/status without invented savings"
+      ],
+      "modelAnswerRef": "private-profile#/experience/2"
+    },
+    {
+      "id": "programmatic-01",
+      "category": "adtech",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 30,
+      "prompt": "What does programmatic advertising mean?",
+      "answer": "Using software and automated processes to buy, sell or deliver digital advertising. Real-time bidding is one programmatic method; programmatic buying is the broader idea.",
+      "checklist": [
+        "Automated/software-based ad buying",
+        "RTB is one method, not a synonym for all programmatic"
+      ],
+      "sourceIds": [
+        "iab-dsp",
+        "iab-rtb"
+      ]
+    },
+    {
+      "id": "publisher-ssp-01",
+      "category": "adtech",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 35,
+      "prompt": "What do a publisher, SSP and ad exchange do in a programmatic auction?",
+      "answer": "A publisher provides the content and ad space. An SSP helps the publisher offer that inventory to buyers. An ad exchange connects buying and selling systems and facilitates auctions. The exact setup can vary.",
+      "checklist": [
+        "Publisher provides inventory",
+        "SSP is seller-side",
+        "Exchange connects demand and supply"
+      ],
+      "sourceIds": [
+        "iab-dsp",
+        "iab-rtb"
+      ]
+    },
+    {
+      "id": "conversion-01",
+      "category": "campaigns",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 30,
+      "prompt": "What is a conversion in a campaign?",
+      "answer": "A user action defined as valuable for a campaign, such as a purchase, lead or app install. Confirm the exact event and rules with the client before analysing results.",
+      "checklist": [
+        "A defined valuable action",
+        "Can differ by campaign",
+        "Clarify event and measurement rules"
+      ],
+      "sourceIds": [
+        "ga-purchase"
+      ]
+    },
+    {
+      "id": "metrics-cpm-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "What is CPM? Spend is £240 for 80,000 impressions. Calculate the CPM.",
+      "answer": "CPM is cost per thousand impressions: spend ÷ impressions × 1,000. £240 ÷ 80,000 × 1,000 = £3 CPM.",
+      "checklist": [
+        "Cost per 1,000 impressions",
+        "Uses impression count",
+        "£3 per thousand"
+      ],
+      "calculation": {
+        "expression": "240 / 80000 * 1000",
+        "expected": 3,
+        "unit": "GBP CPM"
+      }
+    },
+    {
+      "id": "metrics-cpc-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "What is CPC? Spend is £180 for 600 clicks.",
+      "answer": "CPC is spend divided by clicks: £180 ÷ 600 = £0.30 per click.",
+      "checklist": [
+        "Spend divided by clicks",
+        "£0.30 per click"
+      ],
+      "calculation": {
+        "expression": "180 / 600",
+        "expected": 0.3,
+        "unit": "GBP per click"
+      }
+    },
+    {
+      "id": "metrics-cvr-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "A landing page gets 800 sessions and 40 purchases. What is the purchase conversion rate, using sessions as the denominator?",
+      "answer": "Purchases ÷ sessions × 100 = 40 ÷ 800 × 100 = 5%. State the denominator because conversion rate can be calculated from clicks, sessions or users depending on the agreed definition.",
+      "checklist": [
+        "Purchases divided by sessions",
+        "Multiply by 100",
+        "5%; says denominator"
+      ],
+      "calculation": {
+        "expression": "40 / 800 * 100",
+        "expected": 5,
+        "unit": "percent"
+      }
+    },
+    {
+      "id": "metrics-aov-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "Revenue is £4,800 from 60 orders. What is average order value (AOV)?",
+      "answer": "AOV is revenue divided by orders: £4,800 ÷ 60 = £80 per order. Check whether revenue includes tax, shipping, discounts or refunds in the reporting definition.",
+      "checklist": [
+        "Revenue divided by orders",
+        "£80 per order",
+        "Recognises reporting definition"
+      ],
+      "calculation": {
+        "expression": "4800 / 60",
+        "expected": 80,
+        "unit": "GBP per order"
+      }
+    },
+    {
+      "id": "metrics-frequency-01",
+      "category": "metrics",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 30,
+      "prompt": "What does average ad frequency mean, and what might unusually high frequency suggest?",
+      "answer": "Average frequency is impressions divided by reached people over a defined period. High frequency may mean the same audience is seeing ads repeatedly; check reach, campaign goal, time window and performance before recommending a frequency cap or audience change.",
+      "checklist": [
+        "Impressions per reached person",
+        "Names the time window",
+        "Treats high frequency as a signal to investigate, not automatic proof of fatigue"
+      ]
+    },
+    {
+      "id": "tracking-tag-purpose-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 35,
+      "prompt": "What is a marketing tag or conversion pixel used for?",
+      "answer": "It is code or a configured measurement call that sends defined event information to an analytics or advertising system. A tag firing in the browser does not by itself prove the receiving platform accepted, attributed or reported it.",
+      "checklist": [
+        "Sends event/measurement information",
+        "Can be code or a managed tag",
+        "Firing is not the same as successful reporting"
+      ],
+      "sourceIds": [
+        "gtm-data-layer",
+        "ga-purchase"
+      ]
+    },
+    {
+      "id": "mmp-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 35,
+      "prompt": "What is an MMP, and what does it help an app marketer measure?",
+      "answer": "A Mobile Measurement Partner helps measure app campaign performance and attribution across advertising channels, including app installs and in-app events. It is not the same thing as a website tag manager.",
+      "checklist": [
+        "Mobile Measurement Partner",
+        "Measures campaign performance/attribution",
+        "Includes installs or app events"
+      ],
+      "sourceIds": [
+        "appsFlyer-mmp"
+      ]
+    },
+    {
+      "id": "product-feed-01",
+      "category": "tracking",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 40,
+      "prompt": "What is a product feed, and what would you check if a dynamic ad shows the wrong item?",
+      "answer": "A product feed is a structured catalogue of items and attributes such as product ID, name, price, availability and image. Compare the ID sent in the product-view event with the feed ID, then check field mapping, freshness, variants, currency and image URLs.",
+      "checklist": [
+        "Structured product catalogue",
+        "Match event item ID to feed item ID",
+        "Check mapping and freshness"
+      ],
+      "sourceIds": [
+        "product-feed"
+      ]
+    },
+    {
+      "id": "js-types-01",
+      "category": "javascript",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "In JavaScript, what type of value is returned by `typeof \"7\"`?",
+      "options": [
+        "number",
+        "string",
+        "boolean",
+        "object"
+      ],
+      "correctIndex": 1,
+      "answer": "The quotes make `\"7\"` a string. `typeof \"7\"` returns `\"string\"`; `typeof 7` returns `\"number\"`.",
+      "sourceIds": [
+        "mdn-js"
+      ]
+    },
+    {
+      "id": "js-object-array-01",
+      "category": "javascript",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 35,
+      "prompt": "What is the practical difference between a JavaScript array and an object?",
+      "answer": "An array is commonly used for an ordered list of values, accessed by numeric index such as `items[0]`. An object groups named properties, accessed with dot or bracket notation such as `product.id` or `product[\"id\"]`.",
+      "checklist": [
+        "Array is ordered/indexed",
+        "Object stores named properties",
+        "Can read a simple access expression"
+      ],
+      "sourceIds": [
+        "mdn-data-structures",
+        "mdn-language-overview"
+      ]
+    },
+    {
+      "id": "js-function-event-01",
+      "category": "javascript",
+      "type": "short",
+      "difficulty": 2,
+      "seconds": 40,
+      "prompt": "Read this: `button.addEventListener(\"click\", sendEvent)`. What does it mean?",
+      "answer": "When the button receives a click event, the browser calls the `sendEvent` function. `sendEvent` is passed as a callback here; it is not called immediately because there are no parentheses after its name.",
+      "checklist": [
+        "Registers a click listener",
+        "Calls function when click occurs",
+        "Distinguishes function reference from immediate call"
+      ],
+      "sourceIds": [
+        "mdn-events",
+        "mdn-functions"
+      ]
+    },
+    {
+      "id": "js-const-let-01",
+      "category": "javascript",
+      "type": "choice",
+      "difficulty": 1,
+      "seconds": 25,
+      "prompt": "What is the main difference between `const` and `let` for a variable declaration?",
+      "options": [
+        "`const` cannot be reassigned; `let` can be reassigned",
+        "`let` is only for numbers",
+        "`const` makes every object deeply immutable",
+        "There is no difference"
+      ],
+      "correctIndex": 0,
+      "answer": "A `const` binding cannot be reassigned, while a `let` binding can. A `const` object may still have its properties changed; `const` does not make it deeply immutable.",
+      "sourceIds": [
+        "mdn-js"
+      ]
+    },
+    {
+      "id": "customer-experience-01",
+      "category": "recruiter",
+      "type": "short",
+      "difficulty": 1,
+      "seconds": 35,
+      "prompt": "What does customer experience (CX) mean in a technical account role?",
+      "answer": "CX is the customer’s overall experience across interactions with a company. In a technical account role, clear updates, reliable implementation, quick evidence-based troubleshooting and setting realistic expectations all contribute to it.",
+      "checklist": [
+        "Overall experience across interactions",
+        "Connects technical reliability and communication",
+        "Avoids reducing CX to friendliness alone"
+      ]
+    },
+    {
+      "id": "case-missing-purchase-01",
+      "category": "cases",
+      "type": "scenario",
+      "difficulty": 2,
+      "seconds": 60,
+      "prompt": "The client confirms orders in its ecommerce system, but the ad platform reports no purchases. Walk through your first checks.",
+      "answer": "Confirm the event definition and time range, then place an authorised test order if possible. Check whether the purchase event and required values/IDs are generated, whether the tag fires, whether the network request succeeds, whether the platform receives the event, and whether attribution/reporting delay or consent affects visibility. Record evidence at each step and escalate with a reproducible example.",
+      "checklist": [
+        "Align definition, time and scope",
+        "Trace browser event → request → platform",
+        "Check consent, identifiers, delay and deduplication",
+        "Give client findings and next action"
+      ],
+      "sourceIds": [
+        "ga-purchase",
+        "gtm-data-layer"
+      ]
+    },
+    {
+      "id": "case-product-id-01",
+      "category": "cases",
+      "type": "scenario",
+      "difficulty": 2,
+      "seconds": 60,
+      "prompt": "A client says the retargeting ad shows a product different from the one a shopper viewed. What do you compare?",
+      "answer": "Compare the product ID in the view event with the ID in the catalogue/feed and the item selected in the creative. Then inspect variant mapping, case/format differences, feed refresh time and whether the event is sent at the correct page state. Reproduce with one known product ID.",
+      "checklist": [
+        "Trace one known product end to end",
+        "Compare event/feed/creative IDs",
+        "Check variants, formatting and feed freshness"
+      ],
+      "sourceIds": [
+        "gtm-data-layer",
+        "product-feed"
+      ]
+    },
+    {
+      "id": "case-low-roas-01",
+      "category": "cases",
+      "type": "scenario",
+      "difficulty": 2,
+      "seconds": 60,
+      "prompt": "A client says ROAS fell sharply this week. What do you check before changing campaign settings?",
+      "answer": "Verify the metric, date range, attribution window and data completeness first. Compare spend, clicks, conversions, revenue, average order value, product mix, tracking changes, stock/pricing and site checkout health against a comparable period. Segment the change, then agree a measured action and monitoring window with the account team.",
+      "checklist": [
+        "Validate metric and comparison",
+        "Check tracking and site/business changes",
+        "Segment before acting",
+        "Agree action and measurement window"
+      ]
+    },
+    {
+      "id": "interview-pressure-01",
+      "category": "behavioural",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 75,
+      "prompt": "Tell me about a time you handled competing priorities or pressure.",
+      "rubric": [
+        "Explains the competing needs and impact",
+        "Shows how priorities were decided or clarified",
+        "Communicates early with people affected",
+        "States what was completed and learned"
+      ]
+    },
+    {
+      "id": "interview-team-value-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 1,
+      "seconds": 45,
+      "prompt": "What would you bring to this team?",
+      "rubric": [
+        "Connects relevant technical implementation experience",
+        "Names client communication or cross-team coordination",
+        "States a practical learning area honestly",
+        "Avoids generic claims without an example"
+      ]
+    },
+    {
+      "id": "interview-intro-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 1,
+      "seconds": 60,
+      "prompt": "Tell me about yourself and how your experience connects to this role.",
+      "rubric": [
+        "Gives a clear, brief career summary",
+        "Highlights relevant implementation and client-facing work",
+        "Connects experience to the TAM role",
+        "Ends with a clear reason for this next step"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/introduction"
+    },
+    {
+      "id": "interview-day-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 1,
+      "seconds": 60,
+      "prompt": "What does a typical day in your current role look like?",
+      "rubric": [
+        "Explains recurring responsibilities concretely",
+        "Balances client support, technical work and coordination if accurate",
+        "Separates own responsibilities from work owned by engineers",
+        "Avoids turning an occasional task into a daily responsibility"
+      ]
+    },
+    {
+      "id": "interview-tools-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 1,
+      "seconds": 50,
+      "prompt": "Which systems or tools have you used, and what did you use them for?",
+      "rubric": [
+        "Names only tools actually used",
+        "Connects each tool to a real task",
+        "Describes proficiency accurately",
+        "Mentions relevant learning areas without pretending expertise"
+      ]
+    },
+    {
+      "id": "interview-salary-01",
+      "category": "recruiter",
+      "type": "interview",
+      "difficulty": 2,
+      "seconds": 45,
+      "prompt": "What are your salary expectations for this role?",
+      "rubric": [
+        "States a clear target/range and whether it is base salary",
+        "Grounds expectations in role scope and experience",
+        "Can answer a current-pay question truthfully without inflating it",
+        "Leaves room to understand the employer’s range and total package"
+      ],
+      "modelAnswerRef": "private-profile#/draftAnswers/salary"
+    }
+  ]
+}
